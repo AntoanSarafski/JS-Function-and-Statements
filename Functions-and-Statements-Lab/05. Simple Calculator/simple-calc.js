@@ -8,6 +8,12 @@ const calculator = {
 };
 
 function calculate(num1, num2, operator) {
+  const fun = calculator[operator];
+
+  if (!fun) {
+    return 0;
+  }
+
   return calculator[operator](num1, num2);
 }
 
