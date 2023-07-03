@@ -1,21 +1,14 @@
 // With nasted function and if\switch statemants
+
+const multiply = (x, y) => x * y;
+
+const divide = (num1, num2) => num1 / num2;
+
+const add = (num1, num2) => num1 + num2;
+
+const substract = (num1, num2) => num1 - num2;
+
 function calculate(num1, num2, operator) {
-  function multiply(num1, num2) {
-    return num1 * num2;
-  }
-
-  function divide(num1, num2) {
-    return num1 / num2;
-  }
-
-  function add(num1, num2) {
-    return num1 + num2;
-  }
-
-  function substract(num1, num2) {
-    return num1 - num2;
-  }
-
   if (operator === "multiply") {
     return multiply(num1, num2);
   }
