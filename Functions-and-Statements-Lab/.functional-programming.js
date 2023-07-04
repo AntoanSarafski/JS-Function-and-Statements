@@ -2,16 +2,19 @@ function greet(getMessage, name) {
   return getMessage() + " " + name;
 }
 
-function sayGoodMorning() {
+function getGreetingBasedOnHour() {
+  const currentHour = new Date().getHours();
+  if (currentHour >= 20) {
+    return "Good evening";
+  }
+
+  if (currentHour >= 12) {
+    return "Good day";
+  }
+
   return "Good morning";
 }
 
-const greeting = greet(sayGoodMorning, "Pesho");
+const greeting = greet(getGreetingBasedOnHour, "Pesho");
 
-const greetingWithAnonymousFuncion = greet(function () {
-  return "Good morning";
-}, "Pesho");
-
-const greetingWithAnonymousArrowFunction = greet(() => "Good morning", "Pesho");
-
-console.log(greetingWithAnonymousArrowFunction);
+console.log(greeting);
