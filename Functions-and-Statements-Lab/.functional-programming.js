@@ -1,3 +1,5 @@
+// HIGER-ORDER functions !!!
+// WHEN ONE FUNCTION RETURN OR ACCEPT OTHER FUNCTION
 function greet(getMessage, name) {
   return getMessage() + " " + name;
 }
