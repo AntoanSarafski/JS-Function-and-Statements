@@ -12,4 +12,6 @@ const greetingWithAnonymousFuncion = greet(function () {
   return "Good morning";
 }, "Pesho");
 
-console.log(greetingWithAnonymousFuncion);
+const greetingWithAnonymousArrowFunction = greet(() => "Good morning", "Pesho");
+
+console.log(greetingWithAnonymousArrowFunction);
