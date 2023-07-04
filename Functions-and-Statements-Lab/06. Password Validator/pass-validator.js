@@ -1,16 +1,27 @@
+function isWrongLength(text) {
+  return text.length < 6 || text.length > 10;
+}
+
+function isAlphaNumeric(text) {
+  return text.match("^[A-Za-z0-9]+$");
+}
+
+function hasAtLeastTwoDigits(text) {
+  const digitCount = text.match(/\d/g);
+  return digitCount ? digitCount.length >= 2 : false;
+}
+
 function validatePassword(password) {
   const errors = [];
 
-  if (password.length < 6 || password.length > 10) {
+  if (isWrongLength(password)) {
     errors.push("Password must be between 6 and 10 characters");
   }
-  if (!password.match("^[A-Za-z0-9]+$")) {
+  if (!isAlphaNumeric(password)) {
     errors.push("Password must consist only of letters and digits");
   }
 
-  const digitCount = password.match(/\d/g);
-
-  if (!digitCount || digitCount.length < 2) {
+  if (!hasAtLeastTwoDigits(password)) {
     errors.push("Password must have at least 2 digits");
   }
 
@@ -22,4 +33,4 @@ function validatePassword(password) {
   console.log("Password is valid");
 }
 
-validatePassword("asji!!!");
+validatePassword("ajkh29");
