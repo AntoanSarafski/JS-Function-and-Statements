@@ -6,11 +6,8 @@ function subtract(x, y) {
   return x - y;
 }
 
-function solve(x, y, z) {
-  const sumOfFirstTwo = sum(x, y);
-  const result = subtract(sumOfFirstTwo, z);
-
-  return result;
+function getResultFromSumAndSubtract(x, y, z) {
+  return subtract(sum(x, y), z);
 }
 
-console.log(solve(1, 2, 4));
+console.log(getResultFromSumAndSubtract(1, 2, 4));
