@@ -7,13 +7,16 @@ const carWash = {
 };
 
 function solve(commands) {
-  let cleanPercentage = 0;
+  let cleanPercentage = commands.reduce(function (acc, curr) {
+    return carWash[curr](acc);
+  }, 0);
+  //   let cleanPercentage = 0;
 
-  for (let index = 0; index < commands.length; index++) {
-    const command = commands[index];
+  //   for (let index = 0; index < commands.length; index++) {
+  //     const command = commands[index];
 
-    cleanPercentage = carWash[command](cleanPercentage);
-  }
+  //     cleanPercentage = carWash[command](cleanPercentage);
+  //   }
 
   return `The car is ${cleanPercentage.toFixed(2)} clean`;
 }
