@@ -1,16 +1,14 @@
-function solve(x, y) {
-  let sumX = 1;
-  let sumY = 1;
+function calculateFactorial(num) {
+  let sum = 1;
 
-  for (let index = 1; index <= x; index++) {
-    sumX *= index;
+  for (let index = 1; index <= num; index++) {
+    sum *= index;
   }
-
-  for (let index = 1; index <= y; index++) {
-    sumY *= index;
-  }
-
-  return (sumX / sumY).toFixed(2);
+  return sum;
 }
 
-console.log(solve(5, 2));
+function divideTwoFactorials(x, y) {
+  return (calculateFactorial(x) / calculateFactorial(y)).toFixed(2);
+}
+
+console.log(divideTwoFactorials(5, 2));
