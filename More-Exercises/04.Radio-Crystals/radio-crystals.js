@@ -21,11 +21,11 @@ function solve(target, chunk) {
         counter++;
       }
       chunk = Math.floor(chunk);
-      console.log(`Cut x${counter}`);
+      console.log(`Lap x${counter}`);
       console.log("Transporting and washing");
       continue;
     }
-    // Gride...
+    // Grind...
     if (chunk - 20 >= target) {
       let counter = 0;
       while (chunk - 20 >= target) {
@@ -33,9 +33,32 @@ function solve(target, chunk) {
         counter++;
       }
       chunk = Math.floor(chunk);
-      console.log(`Cut x${counter}`);
+      console.log(`Grind x${counter}`);
       console.log("Transporting and washing");
       continue;
     }
+
+    //Etch
+    if (chunk - 2 >= target - 1) {
+      let counter = 0;
+      while (chunk - 2 >= target - 1) {
+        chunk -= 2;
+        counter++;
+      }
+      chunk = Math.floor(chunk);
+      console.log(`Etch x${counter}`);
+      console.log("Transporting and washing");
+
+      continue;
+    }
   }
+
+  if (chunk + 1 === target) {
+    chunk += 1;
+    console.log("X-ray x1");
+  }
+  console.log(`Finished crystal ${target} microns`);
+
+  return chunk;
 }
+solve(1375, 50000);
